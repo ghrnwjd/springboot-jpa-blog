@@ -12,13 +12,14 @@ import javax.persistence.*;
 import java.sql.Timestamp;
 
 
-@Data
+
 @NoArgsConstructor
 @AllArgsConstructor
+@Data
 @Builder
+@Entity // User 클래스가 MySQL에 테이블이 생성이 된다.
 // @DynamicInsert insert 시 null인 필드를 제외시킨다.
 // ORM -> Java(다른언어) Object -> 테이블로 매핑해준다.
-@Entity // User 클래스가 MySQL에 테이블이 생성이 된다.
 public class User {
     public int getId() {
         return id;
@@ -42,7 +43,7 @@ public class User {
     @GeneratedValue(strategy =  GenerationType.IDENTITY)
     private int id; // 시퀀스, auto_increment
 
-    @Column(nullable = false, length =  30)  // null 값이 될 수 없다.
+    @Column(nullable = false, length =  30, unique = true)  // null 값이 될 수 없다.
     private String username; //아이디
 
     @Column(nullable = false, length =  100)  // 123456 ==> 해쉬(비밀번호 암호화)
