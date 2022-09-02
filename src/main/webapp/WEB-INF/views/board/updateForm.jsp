@@ -2,19 +2,18 @@
 <%@ include file="../layout/header.jsp"%>
 
 <div class="container">
+    <form>
+    <input type="hidden" id="id" value="${board.id}"/>
       <div class="form-group">
-
-        <input type="text" class="form-control" placeholder="Enter Title" id="title">
+        <input value="${board.title}" type="text" class="form-control" placeholder="Enter Title" id="title">
       </div>
 
          <div class="form-group">
-
-           <textarea class="form-control summernote" rows="5" id="content"></textarea>
+           <textarea class="form-control summernote" rows="5" id="content">${board.content}</textarea>
          </div>
     </form>
 
-    <button id="btn-save" class="btn btn-primary">글쓰기 완료</button>
-</div>
+    <button id="btn-update" class="btn btn-primary">글수정완료</button>
 <script>
       $('.summernote').summernote({
         placeholder: '내용을 입력하세요',
