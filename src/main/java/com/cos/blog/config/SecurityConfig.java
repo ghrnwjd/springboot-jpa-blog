@@ -27,6 +27,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     public BCryptPasswordEncoder encodePWD() {
         // String encPassword = new BCryptPasswordEncoder().encode("1234");
         return  new BCryptPasswordEncoder();
+
     }
 
 
