@@ -24,5 +24,3 @@
 <script src="/js/board.js"></script>
 <br/>
 <%@ include file="../layout/footer.jsp"%>
-
-
