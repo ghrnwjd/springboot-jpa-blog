@@ -34,8 +34,8 @@ public class UserApiController {
                 = authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(user.getPassword(), user.getPassword()));
 
         SecurityContextHolder.getContext().setAuthentication(authentication);
-        // 트랜잭션이 종료되기에 DB값은 변경되었지만
-        // 세션값은 변경되지 않은 상태 -> 우리가 직접 세션값을 변경
+//        트랜잭션이 종료되기에 DB값은 변경되었지만
+//        세션값은 변경되지 않은 상태 -> 우리가 직접 세션값을 변경
 //        Authentication authentication =
 //                new UsernamePasswordAuthenticationToken(principal, null, principal.getAuthorities());
 //
